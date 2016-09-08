@@ -1,0 +1,15 @@
+PODS:
+  - GPUImage (0.1.7)
+  - YUGPUImageHighPassSkinSmoothing (1.2):
+    - GPUImage
+
+DEPENDENCIES:
+  - YUGPUImageHighPassSkinSmoothing
+
+SPEC CHECKSUMS:
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+  YUGPUImageHighPassSkinSmoothing: 1a3a8bc880b33304de3c4aba2e838fa2b56bfc80
+
+PODFILE CHECKSUM: 30ff11bced0f9f1b2eb4b8ccfa6bd0f4b58fa9d7
+
+COCOAPODS: 1.0.1
