@@ -13,6 +13,11 @@
 		BE15A2F91D8136FA003F9DC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE15A2F71D8136FA003F9DC0 /* Main.storyboard */; };
 		BE15A2FB1D8136FA003F9DC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE15A2FA1D8136FA003F9DC0 /* Assets.xcassets */; };
 		BE15A2FE1D8136FA003F9DC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE15A2FC1D8136FA003F9DC0 /* LaunchScreen.storyboard */; };
+		BEEC04631D817E8100653C3D /* country.acv in Resources */ = {isa = PBXBuildFile; fileRef = BEEC045E1D817E8100653C3D /* country.acv */; };
+		BEEC04641D817E8100653C3D /* fogy_blue.acv in Resources */ = {isa = PBXBuildFile; fileRef = BEEC045F1D817E8100653C3D /* fogy_blue.acv */; };
+		BEEC04651D817E8100653C3D /* fresh_blue.acv in Resources */ = {isa = PBXBuildFile; fileRef = BEEC04601D817E8100653C3D /* fresh_blue.acv */; };
+		BEEC04661D817E8100653C3D /* new_2_fresh_blue.acv in Resources */ = {isa = PBXBuildFile; fileRef = BEEC04611D817E8100653C3D /* new_2_fresh_blue.acv */; };
+		BEEC04671D817E8100653C3D /* trains.acv in Resources */ = {isa = PBXBuildFile; fileRef = BEEC04621D817E8100653C3D /* trains.acv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		BE15A2FD1D8136FA003F9DC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE15A2FF1D8136FA003F9DC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE15A3051D8137B4003F9DC0 /* FilterCamera-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FilterCamera-Bridging-Header.h"; sourceTree = "<group>"; };
+		BEEC045E1D817E8100653C3D /* country.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = country.acv; sourceTree = "<group>"; };
+		BEEC045F1D817E8100653C3D /* fogy_blue.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = fogy_blue.acv; sourceTree = "<group>"; };
+		BEEC04601D817E8100653C3D /* fresh_blue.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = fresh_blue.acv; sourceTree = "<group>"; };
+		BEEC04611D817E8100653C3D /* new_2_fresh_blue.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = new_2_fresh_blue.acv; sourceTree = "<group>"; };
+		BEEC04621D817E8100653C3D /* trains.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = trains.acv; sourceTree = "<group>"; };
 		E790E26063ABA8F84BCC0D5A /* Pods-FilterCamera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilterCamera.release.xcconfig"; path = "Pods/Target Support Files/Pods-FilterCamera/Pods-FilterCamera.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +89,11 @@
 		BE15A2F21D8136FA003F9DC0 /* FilterCamera */ = {
 			isa = PBXGroup;
 			children = (
+				BEEC045E1D817E8100653C3D /* country.acv */,
+				BEEC045F1D817E8100653C3D /* fogy_blue.acv */,
+				BEEC04601D817E8100653C3D /* fresh_blue.acv */,
+				BEEC04611D817E8100653C3D /* new_2_fresh_blue.acv */,
+				BEEC04621D817E8100653C3D /* trains.acv */,
 				BE15A2F31D8136FA003F9DC0 /* AppDelegate.swift */,
 				BE15A2F51D8136FA003F9DC0 /* ViewController.swift */,
 				BE15A2F71D8136FA003F9DC0 /* Main.storyboard */,
@@ -153,8 +168,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE15A2FE1D8136FA003F9DC0 /* LaunchScreen.storyboard in Resources */,
+				BEEC04651D817E8100653C3D /* fresh_blue.acv in Resources */,
 				BE15A2FB1D8136FA003F9DC0 /* Assets.xcassets in Resources */,
+				BEEC04671D817E8100653C3D /* trains.acv in Resources */,
 				BE15A2F91D8136FA003F9DC0 /* Main.storyboard in Resources */,
+				BEEC04631D817E8100653C3D /* country.acv in Resources */,
+				BEEC04641D817E8100653C3D /* fogy_blue.acv in Resources */,
+				BEEC04661D817E8100653C3D /* new_2_fresh_blue.acv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
