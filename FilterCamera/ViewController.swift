@@ -7,15 +7,20 @@
 //
 
 import UIKit
+import AVKit
 
 class ViewController: UIViewController {
 
     var videoCamera: GPUImageVideoCamera!
-    var movieWriter: GPUImageMovieWriter!
+
     var skinFilter: YUGPUImageHighPassSkinSmoothingFilter!
     var hsbFilter: GPUImageHSBFilter!
-    var curveFilter:GPUImageToneCurveFilter!
+    var curveFilter: GPUImageToneCurveFilter!
     var filterGroup: GPUImageFilterGroup!
+
+    var movieWriter: GPUImageMovieWriter!
+
+    var videoURLs = [NSURL]()
 
     @IBOutlet var previewView: GPUImageView!
 
@@ -31,7 +36,7 @@ class ViewController: UIViewController {
         hsbFilter.reset()
 
         curveFilter = GPUImageToneCurveFilter(ACV: "new_2_fresh_blue")
-        
+
         filterGroup = GPUImageFilterGroup()
         filterGroup.addFilter(skinFilter)
         filterGroup.addFilter(hsbFilter)
@@ -79,5 +84,35 @@ class ViewController: UIViewController {
         print(sender.value)
         print(hsbFilter.description)
     }
+
+    // 录像
+    @IBAction func startButtonClick(sender: UIButton) {
+        let paths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.LibraryDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        let documentsDirectory = paths[0] as NSString
+        let dataPath = documentsDirectory.stringByAppendingPathComponent(NSUUID().UUIDString + ".m4v") as String
+        let url = NSURL(fileURLWithPath: dataPath)
+        videoURLs.append(url)
+        
+        movieWriter = GPUImageMovieWriter(movieURL: url, size: CGSize(width: 480, height: 640))
+
+        movieWriter.encodingLiveVideo = true
+        filterGroup.addTarget(movieWriter)
+        videoCamera.audioEncodingTarget = movieWriter
+        movieWriter.startRecording()
+    }
+    @IBAction func stopButtonClick(sender: UIButton) {
+        filterGroup.removeTarget(movieWriter)
+        videoCamera.audioEncodingTarget = nil
+        movieWriter.finishRecording()
+
+    }
+    @IBAction func openButtonClick(sender: UIButton) {
+        guard let url = videoURLs.last else { return }
+        
+        let vc = AVPlayerViewController()
+        vc.player = AVPlayer(URL: url)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
 }
 
