@@ -92,7 +92,7 @@ class ViewController: UIViewController {
         let dataPath = documentsDirectory.stringByAppendingPathComponent(NSUUID().UUIDString + ".m4v") as String
         let url = NSURL(fileURLWithPath: dataPath)
         videoURLs.append(url)
-        
+
         movieWriter = GPUImageMovieWriter(movieURL: url, size: CGSize(width: 480, height: 640))
 
         movieWriter.encodingLiveVideo = true
@@ -108,10 +108,70 @@ class ViewController: UIViewController {
     }
     @IBAction func openButtonClick(sender: UIButton) {
         guard let url = videoURLs.last else { return }
-        
+
         let vc = AVPlayerViewController()
         vc.player = AVPlayer(URL: url)
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    // 更改滤镜
+//    videoCamera.removeAllTargets()
+//    filter.removeAllTargets()
+//    filter = GPUImageSepiaFilter()
+//    videoCamera.addTarget(filter)
+//    filter.addTarget(filterView)
+//    filter.prepareForImageCapture()
+
+    @IBAction func changeFilter1ButtonClick(sender: UIButton) {
+        videoCamera.pauseCameraCapture()
+
+        videoCamera.removeAllTargets()
+        filterGroup.removeAllTargets()
+
+        curveFilter = GPUImageToneCurveFilter(ACV: "fogy_blue")
+
+        filterGroup = GPUImageFilterGroup()
+        filterGroup.addFilter(skinFilter)
+        filterGroup.addFilter(hsbFilter)
+        filterGroup.addFilter(curveFilter)
+
+        skinFilter.addTarget(hsbFilter)
+        hsbFilter.addTarget(curveFilter)
+        filterGroup.initialFilters = [skinFilter]
+        filterGroup.terminalFilter = curveFilter
+
+        videoCamera?.addTarget(filterGroup)
+
+        filterGroup.addTarget(previewView)
+        videoCamera?.startCameraCapture()
+
+        videoCamera.resumeCameraCapture()
+
+    }
+    @IBAction func changeFilter2ButtonClick(sender: UIButton) {
+        videoCamera.pauseCameraCapture()
+        
+        videoCamera.removeAllTargets()
+        filterGroup.removeAllTargets()
+        
+        curveFilter = GPUImageToneCurveFilter(ACV: "trains")
+        
+        filterGroup = GPUImageFilterGroup()
+        filterGroup.addFilter(skinFilter)
+        filterGroup.addFilter(hsbFilter)
+        filterGroup.addFilter(curveFilter)
+        
+        skinFilter.addTarget(hsbFilter)
+        hsbFilter.addTarget(curveFilter)
+        filterGroup.initialFilters = [skinFilter]
+        filterGroup.terminalFilter = curveFilter
+        
+        videoCamera?.addTarget(filterGroup)
+        
+        filterGroup.addTarget(previewView)
+        videoCamera?.startCameraCapture()
+        
+        videoCamera.resumeCameraCapture()
     }
 
 }
