@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A320" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FilterCell" customModule="FilterCamera" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="113" height="107"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="113" height="107"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sHy-sh-v85">
+                        <rect key="frame" x="0.0" y="0.0" width="113" height="81"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRM-79-uJm">
+                        <rect key="frame" x="0.0" y="81" width="113" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="29" id="Qtk-CJ-mkD"/>
+                            <constraint firstAttribute="height" constant="26" id="zp5-Lr-2iE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Qtk-CJ-mkD"/>
+                            </mask>
+                        </variation>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="sHy-sh-v85" secondAttribute="trailing" id="QrA-Iw-2Su"/>
+                <constraint firstAttribute="bottom" secondItem="HRM-79-uJm" secondAttribute="bottom" id="ShA-Gj-tql"/>
+                <constraint firstItem="sHy-sh-v85" firstAttribute="leading" secondItem="HRM-79-uJm" secondAttribute="leading" id="bsp-p9-eHd"/>
+                <constraint firstItem="sHy-sh-v85" firstAttribute="trailing" secondItem="HRM-79-uJm" secondAttribute="trailing" id="pAP-Jh-JHQ"/>
+                <constraint firstItem="sHy-sh-v85" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="rS6-rF-3Zt"/>
+                <constraint firstItem="sHy-sh-v85" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="sGm-gZ-MEJ"/>
+                <constraint firstItem="HRM-79-uJm" firstAttribute="top" secondItem="sHy-sh-v85" secondAttribute="bottom" id="xra-PW-VGz"/>
+            </constraints>
+            <size key="customSize" width="113" height="107"/>
+            <connections>
+                <outlet property="nameLabel" destination="HRM-79-uJm" id="1gc-Qs-TBB"/>
+                <outlet property="previewImageView" destination="sHy-sh-v85" id="ZbX-QM-ckF"/>
+            </connections>
+            <point key="canvasLocation" x="171.5" y="183.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

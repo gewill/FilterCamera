@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A320" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="FilterHeaderView" customModule="FilterCamera" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCK-7I-fpa">
+                    <rect key="frame" x="145" y="10" width="30" height="30"/>
+                    <state key="normal" title="OK"/>
+                    <connections>
+                        <action selector="doneButtonClick:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="GAa-So-inJ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="KCK-7I-fpa" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="fCe-NV-Fxg"/>
+                <constraint firstItem="KCK-7I-fpa" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="fMF-Lm-FEp"/>
+            </constraints>
+            <connections>
+                <outlet property="doneButton" destination="KCK-7I-fpa" id="sLp-hb-Hch"/>
+            </connections>
+        </collectionReusableView>
+    </objects>
+</document>
